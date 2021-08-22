@@ -56,7 +56,8 @@ while True:
     login_button_ele = driver.find_element_by_id("passcode")
     login_button_ele.click()
     
-    # Making sure correct passcode is entered
+    time.sleep(.5)
+    # If error doesn't exist hence NoSuchElementException then break out of loop
     try:
         driver.find_element_by_xpath('/html/body/div/div/div[4]/div/div[2]')
         
@@ -64,7 +65,6 @@ while True:
         print("**Wrong Passcode**")
         print("May have to refresh code on DUO app")
     except NoSuchElementException:
-        print("Couldn't find error")
         break
 
 # Leave iframe
