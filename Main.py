@@ -51,6 +51,7 @@ while True:
     duo_auth_passcode = input("Enter DUO Passcode: ")
     passcode_text_field_ele = driver.find_element_by_class_name("passcode-input")
     passcode_text_field_ele.click()
+    passcode_text_field_ele.clear()
     passcode_text_field_ele.send_keys(duo_auth_passcode)
 
     login_button_ele = driver.find_element_by_id("passcode")
@@ -67,12 +68,14 @@ while True:
     except NoSuchElementException:
         break
 
+
+time.sleep(.5)
 # Leave iframe
 driver.switch_to.default_content()
 
 # Start Health Risk Assessment button
-# start_assessment_ele = driver.find_element_by_class_name("btn btn-yellow")
-# start_assessment_ele.click()
+start_assessment_ele = driver.find_element_by_class_name("input-group")
+start_assessment_ele.click()
 
 
 # Closes the browser
