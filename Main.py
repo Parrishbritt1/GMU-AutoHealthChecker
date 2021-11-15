@@ -136,5 +136,7 @@ send_input(phone_ele, PHONE_NUMBER)
 # testing and analysis of samples from you for the purpose of an approved Coronavirus (COVID-19) test?
 click_by_id("rb_q_128_c1")
 
+driver.find_elements_by_xpath("/html/body/div[1]/div/form/div/div[18]/div/input")[0].click()
+
 # Closes the browser
-# driver.quit()
+driver.quit()
